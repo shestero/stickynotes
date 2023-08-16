@@ -1,11 +1,11 @@
 package com.shestero.sticky.views
 
-import com.shestero.sticky.Workplace
+import com.shestero.sticky.Workspace
 import com.shestero.sticky.data.{NodeClass, StickyPlace}
 
 import scala.util.chaining._
 
-case class StickyPlaceView(place: StickyPlace)(implicit w: Workplace) {
+case class StickyPlaceView(place: StickyPlace)(implicit w: Workspace) {
 
   def html(): String = {
     import place._

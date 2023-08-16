@@ -1,9 +1,9 @@
 package com.shestero.sticky.views
 
-import com.shestero.sticky.Workplace
+import com.shestero.sticky.Workspace
 import com.shestero.sticky.data.Note
 
-case class NoteView(note: Note)(implicit w: Workplace) {
+case class NoteView(note: Note)(implicit w: Workspace) {
 
   def html(): String = {
     import note._

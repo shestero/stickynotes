@@ -6,7 +6,7 @@ import java.io.File
 import scala.io.Source
 import scala.util.chaining._
 
-class Workplace(classesFile: String = "data/classes.tsv", notesDir: String = "data/notes") {
+class Workspace(classesFile: String = "data/classes.tsv", notesDir: String = "data/notes") {
 
   // Read classes:
 
