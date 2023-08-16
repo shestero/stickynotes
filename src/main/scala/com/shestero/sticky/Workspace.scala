@@ -6,10 +6,9 @@ import java.io.File
 import scala.io.Source
 import scala.util.chaining._
 
-class Workspace(classesFile: String = "data/classes.tsv", notesDir: String = "data/notes") {
-
+class Workspace(classesFile: String = "data/classes.tsv", notesDir: String = "data/notes")
+{
   // Read classes:
-
   val classes: Map[String, NodeClass] =
     Source
       .fromFile(classesFile)

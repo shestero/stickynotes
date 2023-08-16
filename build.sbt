@@ -30,17 +30,7 @@ libraryDependencies ++= Seq(
   "com.softwaremill.sttp.tapir" %% "tapir-swagger-ui-bundle" % TapirVersion,
 
   "com.softwaremill.sttp.tapir" %% "tapir-http4s-server" % "1.2.9"
-
-  //"com.softwaremill.sttp.shared" %% "akka" % "1.3.15"
-  //"com.softwaremill.sttp.tapir" %% "tapir-akka-http-server" % TapirVersion exclude("com.typesafe.akka", "akka-stream_2.12"),
-  // Otherwise this will transitively pull some Akka modules in version 2.6. ^^^
 )
 
 libraryDependencies += "com.softwaremill.sttp.client3" %% "core" % "3.8.12"
 // "com.softwaremill.sttp.client3" %% "upickle" % "3.8.12"
-
-//val monixVersion = "3.4.1"
-//libraryDependencies += "io.monix" %% "monix" % monixVersion
-//libraryDependencies += "io.monix" %% "monix-reactive" % monixVersion
-
-
