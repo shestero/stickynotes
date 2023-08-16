@@ -1,0 +1,5 @@
+Linking show and episodes
+sh:pivot_nymag
+ep:pivot_nymag_rss-06-oct-2021-bonus-episode-elon-musk-at-code-conference-2021
+ep:pivot_nymag_rss-28-aug-2020-kevin-mayer-exits-tiktok-palantir-s-scorching-s-1-and-a-listener-mail-question-about-cable-news-with
+pr:kara.sweden

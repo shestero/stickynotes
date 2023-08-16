@@ -6,3 +6,41 @@ lazy val root = (project in file("."))
   .settings(
     name := "stickynotes"
   )
+
+
+val http4sVersion = "0.23.13" // "0.23.18"
+
+// Only necessary for SNAPSHOT releases
+//resolvers += Resolver.sonatypeRepo("snapshots")
+
+libraryDependencies ++= Seq(
+  "org.http4s" %% "http4s-dsl" % http4sVersion,
+  "org.http4s" %% "http4s-blaze-server" % http4sVersion,
+  "org.http4s" %% "http4s-blaze-client" % http4sVersion
+)
+
+val catsVersion = "2.5.4" // "3.4.8"
+libraryDependencies += "org.typelevel" %% "cats-effect" % catsVersion
+ThisBuild / libraryDependencySchemes += "org.typelevel" %% "cats-effect" % "always"
+
+// Tapir
+val TapirVersion = "1.5.5"
+libraryDependencies ++= Seq(
+  "com.softwaremill.sttp.tapir" %% "tapir-files" % TapirVersion,
+  "com.softwaremill.sttp.tapir" %% "tapir-swagger-ui-bundle" % TapirVersion,
+
+  "com.softwaremill.sttp.tapir" %% "tapir-http4s-server" % "1.2.9"
+
+  //"com.softwaremill.sttp.shared" %% "akka" % "1.3.15"
+  //"com.softwaremill.sttp.tapir" %% "tapir-akka-http-server" % TapirVersion exclude("com.typesafe.akka", "akka-stream_2.12"),
+  // Otherwise this will transitively pull some Akka modules in version 2.6. ^^^
+)
+
+libraryDependencies += "com.softwaremill.sttp.client3" %% "core" % "3.8.12"
+// "com.softwaremill.sttp.client3" %% "upickle" % "3.8.12"
+
+//val monixVersion = "3.4.1"
+//libraryDependencies += "io.monix" %% "monix" % monixVersion
+//libraryDependencies += "io.monix" %% "monix-reactive" % monixVersion
+
+

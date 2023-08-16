@@ -1,0 +1,33 @@
+body {
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif; century-gothic
+}
+
+.note {
+    width: 800px;
+    min-width: 50%;
+    border: solid #d0e0c0 1px;
+    padding: 5px;
+    background: #f0ffe0;
+}
+
+.note-id {
+    font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+    font-size: smaller;
+    text-align: right;
+}
+
+.note-subj {
+    font-size: large;
+}
+
+.note-link-block {
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.note-text {
+    font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+    white-space: pre-wrap;
+}
