@@ -12,15 +12,15 @@ case class StickyPlaceView(place: StickyPlace)(implicit w: Workspace) {
 
     val cls: Option[NodeClass] = w.classes.get(classCode)
 
-    val link0 = status match {
-      case "+" => s"""<input type="checkbox" checked> $nodeId"""
-      case "-" => s"""<input type="checkbox"> <strike>$nodeId</strike>"""
-      case _ => s"""<input type="checkbox"> $nodeId"""
+    val title: String = name getOrElse nodeId
+    val a: String = cls.flatMap(_.url(nodeId)) match {
+      case Some(url) => s"""<a href="$url">$title</a>"""
+      case None => title
     }
-
-    val link = cls.flatMap(_.url(nodeId)) match {
-      case Some(url) => s"""<a href="$url">$link0</a>"""
-      case None => link0
+    val link: String = status match {
+      case "+" => s"""<input type="checkbox" checked> $a"""
+      case "-" => s"""<input type="checkbox"> <strike>$a</strike>"""
+      case _ => s"""<input type="checkbox"> $a"""
     }
 
     s"""\t<div class="note-link">
