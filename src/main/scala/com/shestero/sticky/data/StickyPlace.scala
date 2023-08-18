@@ -20,10 +20,10 @@ object StickyPlace {
       }
       first match {
         // TODO
-        case s"$code:$id" if codes contains code => StickyPlace(id.trim, code, name)
         case s"-$code:$id" if codes contains code => StickyPlace(id.trim, code, name, "-")
         case s"+$code:$id" if codes contains code => StickyPlace(id.trim, code, name, "+")
         case s"*$code:$id" if codes contains code => StickyPlace(id.trim, code, name, "*")
+        case s"$code:$id" => StickyPlace(id.trim, code, name)
         case s => throw new Exception(s"Cannot parse StickyPlace line: $s")
       }
     }

@@ -7,6 +7,7 @@ body {
     min-width: 50%;
     border: solid #d0e0c0 1px;
     padding: 5px;
+    margin: 5px;
     background: #f0ffe0;
 }
 
@@ -18,6 +19,10 @@ body {
 
 .note-subj {
     font-size: large;
+}
+
+.note-field {
+    font-weight: bold;
 }
 
 .note-link-block {

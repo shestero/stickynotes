@@ -1,7 +1,12 @@
 Sample link
-sh:pivot_nymag Pie in the Sky
+-sh:pivot_nymag Pie in the Sky
 +is:917
--is:958
+*is:958
+checking: 2023-08-20
+deadline: 2023-08-31
+someObject1:unknown
+someObject2:unknown Unknown object with <i>"link"</i>
+note:20230816-2130-episodes.txt Link to other note
 
 Write some multiline text
     here.

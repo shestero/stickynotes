@@ -19,8 +19,9 @@ case class StickyPlaceView(place: StickyPlace)(implicit w: Workspace) {
     }
     val link: String = status match {
       case "+" => s"""<input type="checkbox" checked> $a"""
-      case "-" => s"""<input type="checkbox"> <strike>$a</strike>"""
-      case _ => s"""<input type="checkbox"> $a"""
+      case "-" => s""" <strike>$a</strike>"""
+      case "*" => s"""<input type="checkbox"> $a"""
+      case _ => s" $a"
     }
 
     s"""\t<div class="note-link">
