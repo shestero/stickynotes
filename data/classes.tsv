@@ -4,4 +4,4 @@ sh	Show	http://localhost:8080/en/s/$
 ep	Episode	http://localhost:8080/en/er/$
 is	Issue	https://github.com/padverb/web/issues/$
 pr	Profile	http://localhost:8080/en/$
-deadline	Deadline
+deadline	Deadline	 

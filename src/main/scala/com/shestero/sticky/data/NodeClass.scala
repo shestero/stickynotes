@@ -21,7 +21,8 @@ object NodeClass {
     Try {
       line.split("\t") match {
         case Array(name, descr) => NodeClass(name.trim, descr.trim)
-        case Array(name, descr, urlp) if urlp contains "$" => NodeClass(name.trim, descr.trim, urlp.trim.some)
+        case Array(name, descr, url) if url.trim.isEmpty => NodeClass(name.trim, descr.trim)
+        case Array(name, descr, url) if url contains "$" => NodeClass(name.trim, descr.trim, url.trim.some)
         case a => throw new Exception(s"Cannot parse StickyPlace line: ${a.mkString(":")}")
       }
     }
