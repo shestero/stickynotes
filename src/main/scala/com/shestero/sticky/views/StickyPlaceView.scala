@@ -12,11 +12,15 @@ case class StickyPlaceView(place: StickyPlace)(implicit w: Workspace) {
 
     val cls: Option[NodeClass] = w.classes.get(classCode)
 
+    val ico: String = cls.flatMap(_.icon).fold("")(_ + " ")
+
     val title: String = name getOrElse nodeId
-    val a: String = cls.flatMap(_.url(nodeId)) match {
-      case Some(url) => s"""<a href="$url">$title</a>"""
-      case None => title
-    }
+    val a: String =
+      cls.flatMap(_.url(nodeId)) match {
+        case Some(url) => s"""<a href="$url">$title</a>"""
+        case None => title
+      }
+
     val link: String = status match {
       case "+" => s"""<input type="checkbox" checked> $a"""
       case "-" => s""" <strike>$a</strike>"""
@@ -25,14 +29,14 @@ case class StickyPlaceView(place: StickyPlace)(implicit w: Workspace) {
     }
 
     s"""\t<div class="note-link">
-       |\t\t$link
+       |\t\t$ico$link
        |\t</div>""".stripMargin
   }
 
   def debug(): Unit = {
     import place._
     val cls: Option[NodeClass] = w.classes.get(classCode)
-    val tpe: String = cls.map(_.descr) getOrElse "<???>"
+    val tpe: String = cls.map(_.title) getOrElse "<???>"
     val ico: String = status.pipe(_ match { case "" => " "; case c => c } )
     println(s"\t\t[$ico] $tpe $nodeId " + cls.flatMap(_.url(nodeId)).getOrElse(""))
   }

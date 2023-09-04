@@ -23,6 +23,17 @@ val catsVersion = "2.5.4" // "3.4.8"
 libraryDependencies += "org.typelevel" %% "cats-effect" % catsVersion
 ThisBuild / libraryDependencySchemes += "org.typelevel" %% "cats-effect" % "always"
 
+// Yaml
+val circeVersion = "0.14.2"
+libraryDependencies ++= Seq(
+  "io.circe" %% "circe-core",
+  "io.circe" %% "circe-generic",
+  "io.circe" %% "circe-parser",
+  "io.circe" %% "circe-yaml"
+  // "io.circe" %% "circe-yaml-v12"
+).map(_ % circeVersion)
+
+
 // Tapir
 val TapirVersion = "1.5.5"
 libraryDependencies ++= Seq(

@@ -11,13 +11,13 @@ case class NoteView(note: Note)(implicit w: Workspace) {
     val fields = note.places
       .collect { case StickyPlace(nodeId, field, name, _) if !w.classes.get(field).exists(_.urlDefined) =>
         s"""<div class="note-field-value">
-           |  <span class="note-field">${ w.classes.get(field).map(_.descr) getOrElse field }</span>:
+           |  <span class="note-field">${ w.classes.get(field).map(_.title) getOrElse field }</span>:
            |  <span class="note-value">${ name getOrElse nodeId }</span>
            |</div>""".stripMargin
       }
 
     val links = w.classes
-      .map { case (code, cls) => cls.descr -> note.codeMap.get(code) }
+      .map { case (code, cls) => cls.title -> note.codeMap.get(code) }
       .collect { case (descr, Some(places)) if places.exists(_.nodeId.nonEmpty) =>
         s"""<div class="note-link-block">
            |  $descr/s:<br>
@@ -43,7 +43,7 @@ case class NoteView(note: Note)(implicit w: Workspace) {
     println("NOTE: id=" + id)
     println("Subject: " + subject)
     w.classes
-      .map{ case (code, cls) => cls.descr -> codeMap.get(code) }
+      .map{ case (code, cls) => cls.title -> codeMap.get(code) }
       .collect { case (descr, Some(places))=>
         println(s"\t$descr/s:")
         places.map(StickyPlaceView.apply).foreach(_.debug())

@@ -6,13 +6,14 @@ import scala.util.Try
 
 case class NodeClass(
                       code: String,
-                      descr: String,
-                      urlPattern: Option[String] = None
+                      title: String,
+                      format: Option[String] = None,
+                      icon: Option[String] = None
                     ) {
   val urlDefined: Boolean =
-    urlPattern.filter(_.contains("$")).isDefined
+    format.filter(_.contains("$")).isDefined
   def url(id: String): Option[String] =
-    urlPattern.map(_.replace("$", id))
+    format.map(_.replace("$", id))
 }
 
 
